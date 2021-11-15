@@ -54,9 +54,9 @@ The Eye is a service designed to add value to applications by storing and aggreg
 
 ## Features
 
-POST route accepts incoming JSON and stores data to PostgreSQL DB
-GET route retrieves specified data
-UI allows end user to query stored data
+* POST route accepts incoming JSON and stores data to PostgreSQL DB
+* GET route retrieves specified data
+* UI allows end user to query stored data
 
 ---------------
 
@@ -88,9 +88,9 @@ UI allows end user to query stored data
 
 ## How to use?
 
-Send valid JSON with above described Expected Fields via POST route on /api/event
-Retrieve data via GET request queries on /api/
-Access and query data via web interface available on the django application homepage, by default accessible via http://localhost:8000/
+* Send valid JSON with above described Expected Fields via POST route on /api/event
+* Retrieve data via GET request queries on /api/
+* Access and query data via web interface available on the django application homepage, by default accessible via http://localhost:8000/
 
 
 
