@@ -5,6 +5,7 @@ from django.http import HttpResponse
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework import generics, filters
+from rest_framework.filters import SearchFilter, OrderingFilter
 import json
 import sentry_sdk
 
@@ -25,8 +26,8 @@ def add_webapp_data(request):
 
 
 class EventAPIView(generics.ListCreateAPIView):
-    search_fields = ['question_text']
-    filter_backends = (filters.SearchFilter,)
+    search_fields = ['=session_id', 'category']
+    filter_backends = (SearchFilter, OrderingFilter)
     queryset = Event.objects.all()
     serializer_class = EventSerializer
 

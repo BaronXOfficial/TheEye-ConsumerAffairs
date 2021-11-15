@@ -1,3 +1,3 @@
-# YT-Django-Docker-Compose-Celery-Redis-PostgreSQL
+# Consumer Affairs - "The Eye" Monitoring API Takehome
  
-"#CATakehome" 
+ 
