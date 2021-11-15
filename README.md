@@ -65,9 +65,6 @@ The Eye is a service designed to add value to applications by storing and aggreg
 * git clone https://github.com/BaronXOfficial/TheEye-ConsumerAffairs.git
 * CD into project directory
 * docker-compose up --build
-
-
-* docker-compose exec django python manage.py makemigrations
 * docker-compose exec django python manage.py migrate
 
 Once initial setup is complete:
