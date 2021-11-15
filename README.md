@@ -54,9 +54,9 @@ The Eye is a service designed to add value to applications by storing and aggreg
 
 ## Features
 
-* POST route accepts incoming JSON and stores data to PostgreSQL DB
-* GET route retrieves specified data
-* UI allows end user to query stored data
+* **POST** route accepts incoming JSON and stores data to PostgreSQL DB
+* **GET** route retrieves specified data
+* **UI** allows end user to query stored data
 
 ---------------
 
@@ -66,19 +66,31 @@ The Eye is a service designed to add value to applications by storing and aggreg
 * CD into project directory
 * docker-compose up --build
 
+
+* docker-compose exec django python manage.py makemigrations
+* docker-compose exec django python manage.py migrate
+
+Once initial setup is complete:
+
+**API:**
+* **POST** | http://localhost:8000/api/event/ {JSON}
+* **GET** | http://localhost:8000/api/
+**UI:**
+* http://localhost:8000
+
 ---------------
 
 ## API Reference
 
 **Valid API Endpoints**
-* POST /api/event {JSON}
+* **POST** | /api/event {JSON}
     * Expected Fields:
         * session_id: str
         * category: str
         * name: str
         * timestamp: datetime
         * data: JSON
-* GET /api/
+* **GET** | /api/
     * ?ordering={field}
         * ex: ?ordering=timestamp
     * ?search={search_terms}
