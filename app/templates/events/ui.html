@@ -1,5 +1,34 @@
-{% extends "events/base.html" %}
+{% extends 'events/base.html' %}
+
 {% block content %}
-
-
-{% endblock content %}
+  <form method="get">
+    {{ filter.form.as_p }}
+    <button type="submit">Search</button>
+  </form>
+  <ul>
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col"><center>#</center></th>
+      <th scope="col"><center>Session ID</center></th>
+      <th scope="col"><center>Category</center></th>
+      <th scope="col"><center>Name</center></th>
+      <th scope="col"><center>Time Stamp</center></th>
+      <th scope="col"><center>Data</center></th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for event in filter.qs %}
+        <tr>
+      <th scope="row"><center>{{ event.id }}</center></th>
+      <td><center>{{ event.session_id }}</center></td>
+      <td><center>{{ event.category }}</center></td>
+      <td><center>{{ event.name }}</center></td>
+      <td><center>{{ event.timestamp }}</center></td>
+      <td><center>{{ event.data }}</center></td>
+    </tr>
+  {% endfor %}
+  </tbody>
+  </table>
+  </ul>
+{% endblock %}

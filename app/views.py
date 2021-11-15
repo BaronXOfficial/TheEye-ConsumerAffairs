@@ -6,6 +6,7 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework import generics, filters
 from rest_framework.filters import SearchFilter, OrderingFilter
+from .filters import EventFilter
 import json
 import sentry_sdk
 
@@ -30,6 +31,12 @@ class EventAPIView(generics.ListCreateAPIView):
     filter_backends = (SearchFilter, OrderingFilter)
     queryset = Event.objects.all()
     serializer_class = EventSerializer
+
+
+def search(request):
+    event_list = Event.objects.all()
+    event_filter = EventFilter(request.GET, queryset=event_list)
+    return render(request, 'events/ui.html', {'filter': event_filter})
 
 def click_1(request):
     add.delay(2,2)
