@@ -62,7 +62,7 @@ The Eye is a service designed to add value to applications by storing and aggreg
 
 ## Installation
 
-* git pull https://github.com/BaronXOfficial/TheEye-ConsumerAffairs
+* git clone https://github.com/BaronXOfficial/TheEye-ConsumerAffairs.git
 * CD into project directory
 * docker-compose up --build
 
